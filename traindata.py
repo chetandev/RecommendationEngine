@@ -8,6 +8,8 @@ import matrix_factorization_utilities
 # Load user ratings
 raw_dataset_df = pd.read_csv('ratings_real.csv')
 
+print(raw_dataset_df.shape)
+
 # Convert the running list of user ratings into a matrix
 ratings_df = pd.pivot_table(raw_dataset_df, index='userId', columns='movieId', aggfunc=np.max)
 
